@@ -16,47 +16,12 @@
 </head>
 <body>
 <div class="container">
-<<<<<<< HEAD
-    <div class="row align-items-start">
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-    </div>
-    <div class="row align-items-center">
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-    </div>
-    <div class="row align-items-end">
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-=======
     <div class="row" id="navbar">
     </div>
 
     <div class="row" id="content">
     </div>
     <div class="row" id="footer">
->>>>>>> af7c54dcfa41202b6fbea85fc7d4ac9390f135bc
     </div>
 </div>
 </body>
