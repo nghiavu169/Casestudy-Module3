@@ -4,9 +4,19 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        .row{
+            border: 1px solid black;
+            height: 200px;
+        }
+        .col-sm-4{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
+<<<<<<< HEAD
     <div class="row align-items-start">
         <div class="col">
             One of three columns
@@ -39,6 +49,14 @@
         <div class="col">
             One of three columns
         </div>
+=======
+    <div class="row" id="navbar">
+    </div>
+
+    <div class="row" id="content">
+    </div>
+    <div class="row" id="footer">
+>>>>>>> af7c54dcfa41202b6fbea85fc7d4ac9390f135bc
     </div>
 </div>
 </body>
