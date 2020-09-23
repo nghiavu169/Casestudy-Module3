@@ -16,12 +16,16 @@
 </head>
 <body>
 <div class="container">
-    <div class="row" id="navbar">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
     </div>
-
-    <div class="row" id="content">
+    <div class="row">
     </div>
-    <div class="row" id="footer">
+    <div class="row">
+    </div>
+    <div class="row">
     </div>
 </div>
 </body>
