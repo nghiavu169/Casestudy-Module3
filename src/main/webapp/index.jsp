@@ -22,7 +22,7 @@
     <div class="row" id="content">
     </div>
     <div class="row" id="footer">
-    </div>
+    </div>.
 </div>
 </body>
 </html>
