@@ -1,8 +1,12 @@
 entities/ShoppingCart.java
  entities.ShoppingCart
+dao/WatchDAO.java
+ dao.WatchDAO
 entities/Order.java
  entities.Order
 entities/Watch.java
  entities.Watch
+controller/Servlet.java
+ controller.Servlet
 entities/Brand.java
  entities.Brand
