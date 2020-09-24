@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,11 +136,12 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="container">
+    <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
                 <div class="container" style="height: 1000px">
                     <div class="row" id="content">
+                        <c:forEach var = "i" begin = "1" end = "3">
                         <div class="col-sm-4">
                             <div class="card" style="width: 19rem;">
                                 <img class="card-img-top" src="https://bossluxury.vn/uploads/2-anhbaivietchitietweb/anh-dong-ho/hublot/hublot2/thumbs/380x0/spirit-of-big-bang-titanium-641-nx-0173-lr-42mm.png" alt="Card image cap">
@@ -150,26 +152,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="https://bossluxurywatch.vn/uploads/san-pham/hublot/thumbs/418x0/hublot-classic-fusion-chronograph-king-gold.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="https://bossluxury.vn/uploads/2-anhbaivietchitietweb/anh-dong-ho/hublot/hublot2/thumbs/380x0/spirit-of-big-bang-titanium-641-nx-0173-lr-42mm.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

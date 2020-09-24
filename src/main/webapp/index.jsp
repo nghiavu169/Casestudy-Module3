@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,12 +50,12 @@
 </head>
 <body>
 <div class="container-fluid" style="height: auto">
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TGDD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
@@ -102,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal -->
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -109,6 +111,7 @@
             </form>
         </div>
     </nav>
+    <!-- navbar -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -135,11 +138,12 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="container">
+    <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
                 <div class="container" style="height: 1000px">
                     <div class="row" id="content">
+                        <c:forEach var = "i" begin = "1" end = "3">
                         <div class="col-sm-4">
                             <div class="card" style="width: 19rem;">
                                 <img class="card-img-top" src="https://bossluxury.vn/uploads/2-anhbaivietchitietweb/anh-dong-ho/hublot/hublot2/thumbs/380x0/spirit-of-big-bang-titanium-641-nx-0173-lr-42mm.png" alt="Card image cap">
@@ -150,26 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="https://bossluxurywatch.vn/uploads/san-pham/hublot/thumbs/418x0/hublot-classic-fusion-chronograph-king-gold.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="https://bossluxury.vn/uploads/2-anhbaivietchitietweb/anh-dong-ho/hublot/hublot2/thumbs/380x0/spirit-of-big-bang-titanium-641-nx-0173-lr-42mm.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -179,8 +164,6 @@
 <div class="row">
     <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
 </div>
-
-
 </body>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 </html>
