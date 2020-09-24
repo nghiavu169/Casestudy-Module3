@@ -1,2 +1,3 @@
-package dao;public class WatchDAO {
+package dao;
+public class WatchDAO {
 }
