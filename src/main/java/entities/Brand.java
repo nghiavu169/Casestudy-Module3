@@ -1,2 +1,6 @@
-package entities;public class Brand {
+package entities;
+
+public class Brand {
+    int id;
+    String name;
 }

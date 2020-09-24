@@ -1,2 +1,8 @@
-entities/Product.java
- entities.Product
+entities/ShoppingCart.java
+ entities.ShoppingCart
+entities/Order.java
+ entities.Order
+entities/Watch.java
+ entities.Watch
+entities/Brand.java
+ entities.Brand

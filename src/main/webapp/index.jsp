@@ -9,21 +9,10 @@
             border: 1px solid black;
             height: 200px;
         }
-        .col-sm-4{
-            border: 1px solid black;
-        }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="row" id="navbar">
-    </div>
 
-    <div class="row" id="content">
-    </div>
-    <div class="row" id="footer">
-    </div>.....
-</div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
