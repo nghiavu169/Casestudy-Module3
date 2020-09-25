@@ -26,23 +26,18 @@ public class Servlet extends HttpServlet {
                 break;
             case "search":
                 searchWatch(request,response);
+                break;
             case "login":
                 loginForm(request,response);
                 break;
             case "edit":
                 updateWatch(request,response);
                 break;
-<<<<<<< HEAD
             default:
-=======
-            case "search":
-                searchWatch(request, response);
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
-                break;
+
         }
     }
 
-<<<<<<< HEAD
     private void updateWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         int brandID = Integer.parseInt(request.getParameter("brandID"));
@@ -50,18 +45,14 @@ public class Servlet extends HttpServlet {
         String price = request.getParameter("price");
         String image = request.getParameter("image");
         String description = request.getParameter("description");
-        this.watchDAO.updateWatchStore(id,name,brandID,price,image,description);
+        this.watchDAO.updateWatchStore(id, name, brandID, price, image, description);
 
-        Watch watch = this.watchDAO.findWatchByID(id);
-        request.setAttribute("watch",watch);
-=======
-    private void updateWatch(HttpServletRequest request, HttpServletResponse response) {
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
+        List<Watch> list = this.watchDAO.selectAll();
+        request.setAttribute("watchList",list);
 
         RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
         res.forward(request, response);
     }
-
     private void createWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int brandID = Integer.parseInt(request.getParameter("brandID"));
         String name = request.getParameter("name");
@@ -112,15 +103,12 @@ public class Servlet extends HttpServlet {
         }
     }
 
-<<<<<<< HEAD
 //    private void updateWatchFrom(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        int id = Integer.parseInt(request.getParameter("id"));
 //
 //        res.forward(request, response);
 //    }
 
-=======
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
     private void searchWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Watch> listWatch = watchDAO.searchBy(request.getParameter("name"));
         request.setAttribute("watchList", listWatch);

@@ -1,30 +1,16 @@
 entities/ShoppingCart.java
  entities.ShoppingCart
-<<<<<<< HEAD
-entities/Admin.java
- entities.Admin
-dao/FakeData.java
- dao.FakeData
 entities/Brand.java
  entities.Brand
-=======
 dao/FakeData.java
  dao.FakeData
-dao/WatchDAO.java
- dao.WatchDAO
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
 entities/Order.java
  entities.Order
 entities/Watch.java
  entities.Watch
-<<<<<<< HEAD
-dao/WatchDAO.java
- dao.WatchDAO
-=======
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
-controller/Servlet.java
- controller.Servlet
 entities/Admin.java
  entities.Admin
-entities/Brand.java
- entities.Brand
+dao/WatchDAO.java
+ dao.WatchDAO
+controller/Servlet.java
+ controller.Servlet

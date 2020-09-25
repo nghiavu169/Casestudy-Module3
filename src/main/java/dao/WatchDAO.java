@@ -122,20 +122,17 @@ public class WatchDAO implements Serializable {
         return watch;
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
-    public boolean updateWatchStore(int id,String name,int brand_id, String price,String img,String description ){
+    public boolean updateWatchStore(int id,String watch_name,int brand_id, String price_watch,String image,String descript ){
         boolean rowUpdate = false;
         try (Connection connection = getConnection();
              PreparedStatement ps = connection.prepareStatement("call update_watch(?,?,?,?,?,?)")){
             ps.setInt(1,id);
-            ps.setString(2,name);
+            ps.setString(2,watch_name);
             ps.setInt(3,brand_id);
-            ps.setString(4,price);
-            ps.setString(5,img);
-            ps.setString(6,description);
+            ps.setString(4,price_watch);
+            ps.setString(5,image);
+            ps.setString(6,descript);
             rowUpdate = ps.executeUpdate() >0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -143,10 +140,6 @@ public class WatchDAO implements Serializable {
         return rowUpdate;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7fe7afa29e00a20b7eecd7ee4d9b186a4112d1cb
     public List<Watch> searchBy(String name){
         List<Watch> list = new ArrayList<>();
         List<Watch> listWatch = selectAll();
