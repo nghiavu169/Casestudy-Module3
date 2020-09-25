@@ -126,13 +126,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://www.dangquangwatch.vn/upload/slideshow/1496345607_dong_ho_citizen.jpg" alt="First slide">
+                <img class="d-block w-100" src="https://luxuo.vn/wp-content/uploads/2019/10/Hublot-Big-Bang-Tourmaline-Paraiba-banner.jpg" alt="First slide" height="550px">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.dangquangwatch.vn/upload/slideshow/631203232_bannerdayda.jpg" alt="Second slide">
+                <img class="d-block w-100" src="https://donghosomot.com/FileUpload/Images/rolexbanner.jpg" alt="Second slide" height="550px">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://www.dangquangwatch.vn/upload/slideshow/1231178149_bannerdqw0909.jpg" alt="Third slide">
+                <img class="d-block w-100" src="https://cdn.shopify.com/s/files/1/0046/9077/2040/files/Hublot_Banner_with_Logo_18e043ef-52b2-4c41-aea9-4911d3bb837b_2000x.jpg?v=1569368370" alt="Third slide" height="550px">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
