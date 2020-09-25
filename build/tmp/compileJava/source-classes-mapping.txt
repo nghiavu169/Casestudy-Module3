@@ -8,9 +8,9 @@ entities/Order.java
  entities.Order
 entities/Watch.java
  entities.Watch
-entities/Brand.java
- entities.Brand
-entities/Admin.java
- entities.Admin
 controller/Servlet.java
  controller.Servlet
+entities/Admin.java
+ entities.Admin
+entities/Brand.java
+ entities.Brand

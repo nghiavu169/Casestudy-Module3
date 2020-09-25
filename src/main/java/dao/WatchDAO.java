@@ -89,6 +89,8 @@ public class WatchDAO implements Serializable {
              CallableStatement cs = connection.prepareCall("{call delete_watch(?)}")) {
             cs.setInt(1, id);
             rowDeleted = cs.executeUpdate() > 0;
+
+
         }
         return rowDeleted;
     }
