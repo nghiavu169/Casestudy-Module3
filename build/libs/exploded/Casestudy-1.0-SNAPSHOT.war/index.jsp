@@ -55,7 +55,7 @@
 
 </head>
 <body>
-<div class="container" style="height: auto">
+<div style="height: auto; width: 100%">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TGDD</a>
@@ -112,7 +112,7 @@
                 <!-- Modal -->
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="/watches?action=search">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name_product">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>

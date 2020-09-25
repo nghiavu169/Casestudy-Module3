@@ -30,7 +30,7 @@ public class WatchDAO implements Serializable {
     public List<Watch> selectAll() {
         List<Watch> list = new ArrayList<>();
         try (Connection connection = getConnection();
-             PreparedStatement cs = connection.prepareStatement("select * from watch ")) {
+             PreparedStatement cs = connection.prepareStatement("select * from watch")) {
             System.out.println(cs);
             ResultSet resultSet = cs.executeQuery();
 
@@ -89,6 +89,8 @@ public class WatchDAO implements Serializable {
              CallableStatement cs = connection.prepareCall("{call delete_watch(?)}")) {
             cs.setInt(1, id);
             rowDeleted = cs.executeUpdate() > 0;
+
+
         }
         return rowDeleted;
     }
@@ -117,6 +119,15 @@ public class WatchDAO implements Serializable {
         return watch;
     }
 
+
+    public List<Watch> searchBy(String name){
+        List<Watch> list = new ArrayList<>();
+        List<Watch> listWatch = selectAll();
+        for (Watch watch : listWatch){
+            if (watch.getName().contains(name)) list.add(watch);
+        }
+        return list;
+    }
 }
 
 

@@ -31,7 +31,6 @@ public class Servlet extends HttpServlet {
         }
     }
 
-
     private void loginForm(HttpServletRequest request, HttpServletResponse response) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -61,21 +60,11 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    private void searchWatch(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name_product");
-        List<Watch> watch = this.fakeData.findByName(name);
-        RequestDispatcher res;
-        if (watch == null){
-            res = request.getRequestDispatcher("error-404.jsp");
-        }else {
-            request.setAttribute("watchList",watch);
-            res = request.getRequestDispatcher("index.jsp");
-        }
-        try {
-            res.forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
+    private void searchWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Watch> listWatch = watchDAO.searchBy(request.getParameter("name"));
+        request.setAttribute("watchList", listWatch);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showListProductIndex(HttpServletRequest request, HttpServletResponse response) {
@@ -88,6 +77,7 @@ public class Servlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
     private void deleteWatch(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         try {
