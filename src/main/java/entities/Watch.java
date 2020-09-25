@@ -17,6 +17,14 @@ public class Watch {
 
     }
 
+    public Watch(String name, int brandID, String price, String image, String description) {
+        this.brand_id = brandID;
+        this.name = name;
+        this.price = price;
+        this.img = image;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }

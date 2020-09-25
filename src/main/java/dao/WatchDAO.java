@@ -70,12 +70,15 @@ public class WatchDAO implements Serializable {
     public Boolean insertWatch(Watch watch) {
         boolean isInsert = false;
         try (Connection connection = getConnection();
-             CallableStatement cs = connection.prepareCall("{call insertWatch(?,?,?,?,?);}")) {
+             CallableStatement cs = connection.prepareCall("call insertWatch(?,?,?,?,?)")) {
+
             cs.setString(1, watch.getName());
             cs.setInt(2, watch.getBrand_id());
             cs.setString(3, watch.getPrice());
             cs.setString(4, watch.getImg());
             cs.setString(5, watch.getDescription());
+            System.out.println(cs);
+            cs.executeUpdate();
             isInsert = true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -117,6 +120,23 @@ public class WatchDAO implements Serializable {
             throwables.printStackTrace();
         }
         return watch;
+    }
+
+    public boolean updateWatchStore(int id,String name,int brand_id, String price,String img,String description ){
+        boolean rowUpdate = false;
+        try (Connection connection = getConnection();
+             PreparedStatement ps = connection.prepareStatement("call update_watch(?,?,?,?,?,?)")){
+            ps.setInt(1,id);
+            ps.setString(2,name);
+            ps.setInt(3,brand_id);
+            ps.setString(4,price);
+            ps.setString(5,img);
+            ps.setString(6,description);
+            rowUpdate = ps.executeUpdate() >0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return rowUpdate;
     }
 
 }

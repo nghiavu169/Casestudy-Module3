@@ -22,19 +22,43 @@ public class Servlet extends HttpServlet {
         if (action == null){
             action = "";
         }switch (action){
-            case "search":
-                searchWatch(request,response);
+            case "create":
+                createWatch(request,response);
                 break;
             case "login":
                 loginForm(request,response);
                 break;
+            case "edit":
+                updateWatch(request,response);
+                break;
         }
     }
 
+    private void updateWatch(HttpServletRequest request, HttpServletResponse response) {
 
-    private void loginForm(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void createWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int brandID = Integer.parseInt(request.getParameter("brandID"));
+        String name = request.getParameter("name");
+        String price = request.getParameter("price");
+        String image = request.getParameter("image");
+        String description = request.getParameter("description");
+        Watch watch = new Watch(name,brandID,price,image,description);
+        this.watchDAO.insertWatch(watch);
+
+        List<Watch> list = this.watchDAO.selectAll();
+        request.setAttribute("watchList",list);
+
+        RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
+        res.forward(request, response);
+    }
+
+
+    private void loginForm(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        System.out.println(username);
         Admin admin = this.watchDAO.selectAdmin();
         List<Watch> list = this.watchDAO.selectAll();
         request.setAttribute("watchList",list);
@@ -61,22 +85,6 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    private void searchWatch(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name_product");
-        List<Watch> watch = this.fakeData.findByName(name);
-        RequestDispatcher res;
-        if (watch == null){
-            res = request.getRequestDispatcher("error-404.jsp");
-        }else {
-            request.setAttribute("watchList",watch);
-            res = request.getRequestDispatcher("index.jsp");
-        }
-        try {
-            res.forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void showListProductIndex(HttpServletRequest request, HttpServletResponse response) {
         List<Watch> watchList = watchDAO.selectAll();
