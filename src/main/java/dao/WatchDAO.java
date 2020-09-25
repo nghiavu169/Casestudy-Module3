@@ -9,8 +9,8 @@ import java.util.List;
 
 public class WatchDAO implements Serializable {
     private static final String jdbcURL = "jdbc:mysql://localhost:3306/product?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "123456";
+    private static final String jdbcUsername = "root";
+    private static final String jdbcPassword = "123456";
 
     public WatchDAO() {
     }
@@ -29,20 +29,17 @@ public class WatchDAO implements Serializable {
     public List<Watch> selectAll() {
         List<Watch> list = new ArrayList<>();
         try (Connection connection = getConnection();
-             CallableStatement cs = connection.prepareCall("{call get_all_watch()}")) {
+             PreparedStatement cs = connection.prepareStatement("select * from watch ")) {
             System.out.println(cs);
             ResultSet resultSet = cs.executeQuery();
 
             while (resultSet.next()) {
-                int id, brand_id;
-                String name, price, img, description;
-
-                id = resultSet.getInt("id");
-                brand_id = resultSet.getInt("brand_id");
-                name = resultSet.getString("name");
-                price = resultSet.getString("price");
-                img = resultSet.getString("img");
-                description = resultSet.getString("description");
+                int id = resultSet.getInt("id");
+                int brand_id = resultSet.getInt("brand_id");
+                String name = resultSet.getString("name");
+                String price = resultSet.getString("price");
+                String img = resultSet.getString("img");
+                String description = resultSet.getString("description");
                 list.add(new Watch(id, brand_id, name, price, img, description));
             }
         } catch (Exception e) {
