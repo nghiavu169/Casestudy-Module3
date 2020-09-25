@@ -23,7 +23,6 @@ public class Servlet extends HttpServlet {
         if (action == null){
             action = "";
         }switch (action){
-
             case "search":
                 searchWatch(request,response);
                 break;
@@ -64,12 +63,12 @@ public class Servlet extends HttpServlet {
         if (action == null) {
             action = "";
         }switch (action){
-            case "delete":
-                try {
+            case "delete": try {
                     deleteWatch(request,response);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                deleteWatch(request,response);
                 break;
             default:
                 showListProductIndex(request,response);
@@ -102,5 +101,22 @@ public class Servlet extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+    }
+    private void deleteWatch(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        try {
+            watchDAO.deleteWatch(id);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        List<Watch> watchList = this.watchDAO.selectAll();
+        request.setAttribute("watchList",watchList);
+        RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
+        try {
+            res.forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
