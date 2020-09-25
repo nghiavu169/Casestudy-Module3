@@ -92,6 +92,31 @@ public class WatchDAO implements Serializable {
         }
         return rowDeleted;
     }
+
+    public Watch findWatchByID(int id){
+        Watch watch = null;
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")){
+            System.out.println(preparedStatement);
+            preparedStatement.setInt(1,id);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()){
+                int idNew = rs.getInt("id");
+                int brand_id = rs.getInt("brand_id");
+                String name = rs.getString("name");
+                String price = rs.getString("price");
+                String img = rs.getString("image");
+                String description = rs.getString("description");
+                watch = new Watch(idNew,brand_id,name,price,img,description);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return watch;
+    }
+
 }
 
 

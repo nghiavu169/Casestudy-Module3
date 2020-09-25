@@ -16,9 +16,9 @@
     <!-- JS, Popper.js, and jQuery -->
 </head>
 <body>
-<h1>Customers</h1>
+<h1>Luxury Watches</h1>
 <p>
-    <a href="#">Create new customer</a>
+    <a href="#">Create new luxury watch</a>
 </p>
 <table border="1" class="table table-bordered">
     <tr>
@@ -40,7 +40,7 @@
             <td>${watch.getImg()}</td>
             <td>${watch.getDescription()}</td>
             <td><a href="" class="btn btn-primary">edit</a></td>
-            <td><a href="" class="btn btn-danger">delete</a></td>
+            <td><a href="/watches?action=delete&id=${watch.getId()}" class="btn btn-danger">delete</a></td>
         </tr>
     </c:forEach>
 </table>
