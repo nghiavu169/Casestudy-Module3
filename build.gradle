@@ -26,7 +26,10 @@ dependencies {
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0060d539dfa084ef572207ae7df5e14b836c8fcd
 }
 
 test {
