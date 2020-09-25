@@ -2,15 +2,15 @@ entities/ShoppingCart.java
  entities.ShoppingCart
 dao/FakeData.java
  dao.FakeData
-entities/Brand.java
- entities.Brand
-entities/Watch.java
- entities.Watch
-entities/Order.java
- entities.Order
-entities/Admin.java
- entities.Admin
 dao/WatchDAO.java
  dao.WatchDAO
+entities/Order.java
+ entities.Order
+entities/Watch.java
+ entities.Watch
+entities/Brand.java
+ entities.Brand
+entities/Admin.java
+ entities.Admin
 controller/Servlet.java
  controller.Servlet

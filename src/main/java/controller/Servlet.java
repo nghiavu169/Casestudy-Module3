@@ -7,14 +7,11 @@ import entities.Watch;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @javax.servlet.annotation.WebServlet("/watches")
@@ -26,9 +23,7 @@ public class Servlet extends HttpServlet {
         if (action == null){
             action = "";
         }switch (action){
-            case "delete":
-                deleteWatch(request,response);
-                break;
+
             case "search":
                 searchWatch(request,response);
                 break;
@@ -38,22 +33,14 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    private void deleteWatch(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteWatch(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        try {
-            watchDAO.deleteWatch(id);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        List<Watch> watchList = this.watchDAO.selectAll();
-        request.setAttribute("watchList",watchList);
-        RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
-        try {
-            res.forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
+        watchDAO.deleteWatch(id);
 
+        List<Watch> watchList = watchDAO.selectAll();
+        request.setAttribute("watchList", watchList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("admin.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void loginForm(HttpServletRequest request, HttpServletResponse response) {
@@ -77,6 +64,13 @@ public class Servlet extends HttpServlet {
         if (action == null) {
             action = "";
         }switch (action){
+            case "delete":
+                try {
+                    deleteWatch(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
             default:
                 showListProductIndex(request,response);
         }
