@@ -13,6 +13,10 @@ public class Watch {
         this.description = description;
     }
 
+    public Watch() {
+
+    }
+
     public int getId() {
         return id;
     }

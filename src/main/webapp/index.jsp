@@ -14,7 +14,7 @@
 
     <style>
         .container{
-            height: 600px;
+            height: auto;
         }
 
         .col-sm-1 ul .menu-left a{
@@ -43,6 +43,12 @@
         }
         .dropdown{
 
+        }
+        .col-sm-4{
+            padding-bottom: 5px;
+        }
+        footer{
+            padding-top: 10px;
         }
     </style>
 
@@ -105,10 +111,8 @@
                 </div>
                 <!-- Modal -->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <label>
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                </label>
+            <form class="form-inline my-2 my-lg-0" method="post" action="/watchs?action=search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name_product">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -145,13 +149,14 @@
             <div class="col-sm-12">
                 <div class="container" style="height: 1000px">
                     <div class="row" id="content">
-                        <c:forEach var = "i" begin = "1" end = "3">
+                        <c:forEach var = "watch" items='${requestScope["watchList"]}' >
                         <div class="col-sm-4">
                             <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="https://bossluxury.vn/uploads/2-anhbaivietchitietweb/anh-dong-ho/hublot/hublot2/thumbs/380x0/spirit-of-big-bang-titanium-641-nx-0173-lr-42mm.png" alt="Card image cap">
+                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text" style="color: black">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">${watch.getName()}</h5>
+                                    <p class="card-text" style="color: black">${watch.getPrice()}</p>
+                                    <p class="card-text" style="color: black">${watch.getDescription()}</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
