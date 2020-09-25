@@ -55,11 +55,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
-<div class="" style="height: auto; width: 100%">
-=======
 <div style="height: auto; width: 100%">
->>>>>>> 8c6d43cfbaaf560bce26791fbc4843159c3ef025
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TGDD</a>

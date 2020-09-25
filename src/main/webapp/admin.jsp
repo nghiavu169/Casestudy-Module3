@@ -11,6 +11,8 @@
 <h1>Luxury Watches</h1>
 <a href="/watches">Back to Home</a>
 <p>
+
+    <!-- Create view -->
 <a href="#" data-toggle="modal" data-target="#exampleModal">Create new luxury watch</a>
 </p>
 <!-- Modal -->
@@ -54,7 +56,51 @@
         </div>
     </div>
 </div>
+<!-- Create view -->
 
+
+<!-- Update view -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Update Watch</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/watches?action=edit" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputBrandID">Brand ID</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Brand Id" name="brandID" value="${requestScope["watch"].getBrand_id()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName">Name</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name" value="${requestScope["watch"].getName()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPrice">Price</label>
+                        <input type="text" class="form-control" placeholder="Price" name="price" value="${requestScope["watch"].getPrice()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputImage">Image</label>
+                        <input type="text" class="form-control" placeholder="Image" name="image" value="${requestScope["watch"].getImg()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDescription">Description</label>
+                        <input type="text" class="form-control" placeholder="Description" name="description" value="${requestScope["watch"].getDescription()}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Update view -->
 <table border="1" class="table table-bordered">
     <tr>
         <td>ID</td>
@@ -76,7 +122,7 @@
             <td>${watch.getPrice()}</td>
             <td>${watch.getImg()}</td>
             <td>${watch.getDescription()}</td>
-            <td><a href="" class="btn btn-primary">edit</a></td>
+            <td><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">edit</a></td>
             <td><a href="/watches?action=delete&id=${watch.getId()}" class="btn btn-danger">delete</a></td>
         </tr>
     </c:forEach>

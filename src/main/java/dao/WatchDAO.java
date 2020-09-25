@@ -122,7 +122,6 @@ public class WatchDAO implements Serializable {
         return watch;
     }
 
-<<<<<<< HEAD
     public boolean updateWatchStore(int id,String name,int brand_id, String price,String img,String description ){
         boolean rowUpdate = false;
         try (Connection connection = getConnection();
@@ -140,7 +139,6 @@ public class WatchDAO implements Serializable {
         return rowUpdate;
     }
 
-=======
 
     public List<Watch> searchBy(String name){
         List<Watch> list = new ArrayList<>();
@@ -150,7 +148,6 @@ public class WatchDAO implements Serializable {
         }
         return list;
     }
->>>>>>> 8c6d43cfbaaf560bce26791fbc4843159c3ef025
 }
 
 
