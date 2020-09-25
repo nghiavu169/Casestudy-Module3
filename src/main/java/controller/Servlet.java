@@ -4,7 +4,6 @@ import dao.FakeData;
 import dao.WatchDAO;
 import entities.Admin;
 import entities.Watch;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

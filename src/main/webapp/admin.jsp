@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Viet
-  Date: 9/25/2020
-  Time: 8:51 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -12,7 +5,6 @@
     <title>Customer List</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
     <!-- JS, Popper.js, and jQuery -->
 </head>
 <body>
