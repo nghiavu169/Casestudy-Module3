@@ -55,7 +55,7 @@
 
 </head>
 <body>
-<div class="container-fluid" style="height: auto">
+<div class="container" style="height: auto">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TGDD</a>

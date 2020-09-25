@@ -76,7 +76,7 @@ public class Servlet extends HttpServlet {
     }
 
     private void showListProductIndex(HttpServletRequest request, HttpServletResponse response) {
-        List<Watch> watchList = this.watchDAO.selectAll();
+        List<Watch> watchList = watchDAO.selectAll();
         request.setAttribute("watchList",watchList);
         RequestDispatcher res = request.getRequestDispatcher("index.jsp");
         try {
