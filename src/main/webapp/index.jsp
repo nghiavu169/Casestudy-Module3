@@ -49,7 +49,7 @@
 
 </head>
 <body>
-<div class="container-fluid" style="height: auto">
+<div class="container" style="height: auto">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TGDD</a>
@@ -106,7 +106,9 @@
                 <!-- Modal -->
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <label>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                </label>
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -161,9 +163,9 @@
         </div>
     </div>
 </div>
-<div class="row">
+<footer>
     <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
-</div>
+</footer>
 </body>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 </html>

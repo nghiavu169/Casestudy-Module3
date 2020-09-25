@@ -9,8 +9,8 @@ import java.util.List;
 
 public class WatchDAO implements Serializable {
     private static final String jdbcURL = "jdbc:mysql://localhost:3306/product?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "123456";
+    private static final String jdbcUsername = "root";
+    private static final String jdbcPassword = "123456";
 
     public WatchDAO(){ }
 
