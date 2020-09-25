@@ -17,6 +17,30 @@
 </head>
 <body>
 <h1>Luxury Watches</h1>
+<form>
+    <div class="form-group">
+        <label for="exampleInputBrandID">Brand ID</label>
+        <input type="text" class="form-control" id="exampleInputBrandID" aria-describedby="emailHelp" placeholder="Brand ID">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputName">Watch Name</label>
+        <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPrice">Price</label>
+        <input type="text" class="form-control" id="exampleInputPrice" placeholder="Price">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputImage">Image</label>
+        <input type="text" class="form-control" id="exampleInputImage" placeholder="Image">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputDescription">Description</label>
+        <input type="text" class="form-control" id="exampleInputDescription" placeholder="Description">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
 <p>
     <a href="#">Create new luxury watch</a>
 </p>

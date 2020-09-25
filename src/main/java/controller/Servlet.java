@@ -26,6 +26,8 @@ public class Servlet extends HttpServlet {
         if (action == null){
             action = "";
         }switch (action){
+            case "create":
+                createWatch(request,response);
             case "search":
                 searchWatch(request,response);
                 break;
@@ -33,6 +35,10 @@ public class Servlet extends HttpServlet {
                 loginForm(request,response);
                 break;
         }
+    }
+
+    private void createWatch(HttpServletRequest request, HttpServletResponse response) {
+
     }
 
     private void loginForm(HttpServletRequest request, HttpServletResponse response) {
