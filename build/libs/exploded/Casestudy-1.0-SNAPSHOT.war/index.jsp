@@ -94,14 +94,14 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <form style="width: 100%;">
+                                <form style="width: 100%;" method="post" action="/watches?action=login">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Username</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" name="username">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Login</button>
                                 </form>
@@ -111,7 +111,7 @@
                 </div>
                 <!-- Modal -->
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="post" action="/watchs?action=search">
+            <form class="form-inline my-2 my-lg-0" method="post" action="/watches?action=search">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name_product">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -155,7 +155,7 @@
                                 <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${watch.getName()}</h5>
-                                    <p class="card-text" style="color: black">${watch.getPrice()}</p>
+                                    <p class="card-text" style="color: black; background-color: red">${watch.getPrice()}</p>
                                     <p class="card-text" style="color: black">${watch.getDescription()}</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>

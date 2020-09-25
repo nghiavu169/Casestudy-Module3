@@ -1,5 +1,6 @@
 package dao;
 
+import entities.Admin;
 import entities.Watch;
 
 import java.io.Serializable;
@@ -38,7 +39,7 @@ public class WatchDAO implements Serializable {
                 int brand_id = resultSet.getInt("brand_id");
                 String name = resultSet.getString("name");
                 String price = resultSet.getString("price");
-                String img = resultSet.getString("img");
+                String img = resultSet.getString("image");
                 String description = resultSet.getString("description");
                 list.add(new Watch(id, brand_id, name, price, img, description));
             }
@@ -46,6 +47,24 @@ public class WatchDAO implements Serializable {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public Admin selectAdmin(){
+        Admin admin = null;
+        try (Connection connection = getConnection();
+             PreparedStatement cs = connection.prepareStatement("select * from admin ")) {
+            System.out.println(cs);
+            ResultSet resultSet = cs.executeQuery();
+
+            while (resultSet.next()){
+                String username = resultSet.getString("admin_name");
+                String password = resultSet.getString("admin_password");
+                admin = new Admin(username,password);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return admin;
     }
 
     public Boolean insertWatch(Watch watch) {

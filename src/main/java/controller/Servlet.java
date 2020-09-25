@@ -2,6 +2,7 @@ package controller;
 
 import dao.FakeData;
 import dao.WatchDAO;
+import entities.Admin;
 import entities.Watch;
 
 import javax.servlet.RequestDispatcher;
@@ -11,9 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-@javax.servlet.annotation.WebServlet("/watchs")
+@javax.servlet.annotation.WebServlet("/watches")
 public class Servlet extends HttpServlet {
     private FakeData fakeData = new FakeData();
     private WatchDAO watchDAO = new WatchDAO();
@@ -24,9 +26,26 @@ public class Servlet extends HttpServlet {
         }switch (action){
             case "search":
                 searchWatch(request,response);
+            case "login":
+                loginForm(request,response);
                 break;
         }
+    }
 
+    private void loginForm(HttpServletRequest request, HttpServletResponse response) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        Admin admin = this.watchDAO.selectAdmin();
+        List<Watch> list = this.watchDAO.selectAll();
+        request.setAttribute("watchList",list);
+        if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())){
+            RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
+            try {
+                res.forward(request, response);
+            } catch (ServletException | IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
