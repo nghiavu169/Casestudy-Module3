@@ -31,10 +31,12 @@ public class Servlet extends HttpServlet {
             case "edit":
                 updateWatch(request,response);
                 break;
+            case "search":
+                searchWatch(request, response);
+                break;
         }
     }
 
-<<<<<<< HEAD
     private void updateWatch(HttpServletRequest request, HttpServletResponse response) {
 
     }
@@ -57,9 +59,6 @@ public class Servlet extends HttpServlet {
 
 
     private void loginForm(HttpServletRequest request, HttpServletResponse response) throws IOException {
-=======
-    private void loginForm(HttpServletRequest request, HttpServletResponse response) {
->>>>>>> 8c6d43cfbaaf560bce26791fbc4843159c3ef025
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         System.out.println(username);
@@ -89,15 +88,12 @@ public class Servlet extends HttpServlet {
         }
     }
 
-<<<<<<< HEAD
-=======
     private void searchWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Watch> listWatch = watchDAO.searchBy(request.getParameter("name"));
         request.setAttribute("watchList", listWatch);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
     }
->>>>>>> 8c6d43cfbaaf560bce26791fbc4843159c3ef025
 
     private void showListProductIndex(HttpServletRequest request, HttpServletResponse response) {
         List<Watch> watchList = watchDAO.selectAll();
