@@ -96,16 +96,26 @@ public class Servlet extends HttpServlet {
             case "delete":
                 deleteWatch(request,response);
                 break;
+<<<<<<< HEAD
             case "showDetails":
                 showWatchDetails(request,response);
                 break;
 //            case "sortByCategory":
 //                sortByCategory(request,response);
+=======
+            case "hublot":
+                hublotWatch(request, response);
+                break;
+//            case "edit":
+//                updateWatchFrom(request,response);
+//                break;
+>>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
             default:
                 showListProductIndex(request,response);
         }
     }
 
+<<<<<<< HEAD
     private void showWatchDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Watch watch = this.watchDAO.findWatchByID(id);
@@ -113,6 +123,20 @@ public class Servlet extends HttpServlet {
         RequestDispatcher res = request.getRequestDispatcher("details.jsp");
         res.forward(request, response);
     }
+=======
+    private void hublotWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Watch> watchList = watchDAO.hublot();
+        request.setAttribute("watchList", watchList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
+    }
+
+//    private void updateWatchFrom(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//
+//        res.forward(request, response);
+//    }
+>>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
 
     private void searchWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Watch> listWatch = watchDAO.searchBy(request.getParameter("name"));
