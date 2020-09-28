@@ -1,18 +1,32 @@
+<<<<<<< HEAD
 entities/Brand.java
  entities.Brand
+=======
+controller/WatchServlet.java
+ controller.WatchServlet
+>>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
 entities/ShoppingCart.java
  entities.ShoppingCart
-entities/Admin.java
- entities.Admin
+dao/WatchDAO.java
+ dao.WatchDAO
 dao/FakeData.java
  dao.FakeData
 entities/Order.java
  entities.Order
 entities/Watch.java
  entities.Watch
+<<<<<<< HEAD
 controller/WatchServlet.java
  controller.WatchServlet
 dao/WatchDAO.java
  dao.WatchDAO
 controller/Servlet.java
  controller.Servlet
+=======
+controller/Servlet.java
+ controller.Servlet
+entities/Admin.java
+ entities.Admin
+entities/Brand.java
+ entities.Brand
+>>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74

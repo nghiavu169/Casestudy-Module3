@@ -154,6 +154,7 @@
     <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
+<<<<<<< HEAD
                 <div class="container">
                     <div class="row" id="content">
                         <h1 class="card-title">${requestScope["watch"].getName()}</h1>
@@ -167,6 +168,24 @@
                                     <p class="card-text" style="color: black">${requestScope["watch"].getDescription()}</p>
                                     <a href="#" class="btn btn-primary">Add to cart</a>
                                 </div>
+=======
+                <h1>${watch.getName()}</h1>
+                <div class="row" id="content" style="height: 100%;">
+                    <div class="col-sm-8">
+                        <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
+                                                                                       src="${watch.getImg()}"
+                                                                                       alt="Card image cap"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card" style="width:19rem; ">
+                            <div class="card-body">
+                                <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
+                                        class="card-title" style="height: 50px">${watch.getName()}</h5></a>
+                                <p class="card-text"
+                                   style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
+                                <hr/>
+                                <p class="card-text" style="color: black">${watch.getDescription()}</p>
+>>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
                             </div>
                         </div>
                     </div>
@@ -174,13 +193,13 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+        <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
+    </div>
 </div>
 <!-- main view product -->
 
 
-<footer>
-    <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
-</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

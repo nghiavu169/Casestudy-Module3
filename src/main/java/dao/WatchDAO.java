@@ -148,7 +148,10 @@ public class WatchDAO implements Serializable {
         }
         return list;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
     public List<Brand> selectAllBrand() {
         List<Brand> brandList = new ArrayList<>();
         try (Connection connection = getConnection();
@@ -167,6 +170,7 @@ public class WatchDAO implements Serializable {
         return brandList;
     }
 
+<<<<<<< HEAD
     public List<Watch>hublot(String brand){
             List<Watch> hublotList = new ArrayList<>();
             List<Watch> list = selectAll();
@@ -174,6 +178,15 @@ public class WatchDAO implements Serializable {
                 if (watch.getName().toLowerCase().contains(brand)) hublotList.add(watch);
             }
             return hublotList;
+=======
+    public List<Watch> hublot(){
+        List<Watch> hublotList = new ArrayList<>();
+        List<Watch> list = selectAll();
+        for (Watch watch : list) {
+            if (watch.getName().toUpperCase().contains("HUBLOT")) hublotList.add(watch);
+        }
+        return hublotList;
+>>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
     }
 }
 
