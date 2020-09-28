@@ -3,6 +3,7 @@ package controller;
 import dao.FakeData;
 import dao.WatchDAO;
 import entities.Admin;
+import entities.Brand;
 import entities.Watch;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -95,19 +96,23 @@ public class Servlet extends HttpServlet {
             case "delete":
                 deleteWatch(request,response);
                 break;
-//            case "edit":
-//                updateWatchFrom(request,response);
-//                break;
+            case "showDetails":
+                showWatchDetails(request,response);
+                break;
+//            case "sortByCategory":
+//                sortByCategory(request,response);
             default:
                 showListProductIndex(request,response);
         }
     }
 
-//    private void updateWatchFrom(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//
-//        res.forward(request, response);
-//    }
+    private void showWatchDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Watch watch = this.watchDAO.findWatchByID(id);
+        request.setAttribute("watch",watch);
+        RequestDispatcher res = request.getRequestDispatcher("details.jsp");
+        res.forward(request, response);
+    }
 
     private void searchWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Watch> listWatch = watchDAO.searchBy(request.getParameter("name"));

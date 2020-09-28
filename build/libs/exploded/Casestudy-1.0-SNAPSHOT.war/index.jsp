@@ -16,7 +16,6 @@
         .container{
             height: auto;
         }
-
         .col-sm-1 ul .menu-left a{
             color: white;
             text-decoration: none;
@@ -26,9 +25,6 @@
         }
         footer{
             clear: both;
-        }
-        #content{
-            height: 300px;
         }
         .col-sm-4 p{
             color: white;
@@ -47,46 +43,46 @@
         .col-sm-4{
             padding-bottom: 5px;
         }
-        footer{
+        .footer{
             padding-top: 10px;
+            clear: both;
+        }
+        nav{
+            position: fixed;
         }
     </style>
-
-
 </head>
 <body>
 <div style="height: auto; width: 100%">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">TGDD</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: black">
+        <a class="navbar-brand" href="#"><img style="width: 50px;height: 50px"
+                src="https://www.screenja.com/static/img/thumbs/logo-rolex-normal-636.png" alt="lỗi"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/watches">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Rolex</a>
+                        <a class="dropdown-item" href="#">Hublot Watch</a>
+                        <a class="dropdown-item" href="#">Apple Watch</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="/category">List of Watches</a>
                     </div>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item " style="position: relative; float: right">
                     <a class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModal">Login</a>
                 </li>
                 <!-- Modal -->
@@ -118,6 +114,8 @@
         </div>
     </nav>
     <!-- navbar -->
+
+    <!-- promoted banner -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -126,13 +124,18 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://luxuo.vn/wp-content/uploads/2019/10/Hublot-Big-Bang-Tourmaline-Paraiba-banner.jpg" alt="First slide" height="550px">
+                <img class="d-block w-100"
+                     src="https://luxuo.vn/wp-content/uploads/2019/10/Hublot-Big-Bang-Tourmaline-Paraiba-banner.jpg"
+                     alt="First slide" height="550px">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://donghosomot.com/FileUpload/Images/rolexbanner.jpg" alt="Second slide" height="550px">
+                <img class="d-block w-100" src="https://donghosomot.com/FileUpload/Images/rolexbanner.jpg"
+                     alt="Second slide" height="550px">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://cdn.shopify.com/s/files/1/0046/9077/2040/files/Hublot_Banner_with_Logo_18e043ef-52b2-4c41-aea9-4911d3bb837b_2000x.jpg?v=1569368370" alt="Third slide" height="550px">
+                <img class="d-block w-100"
+                     src="https://cdn.shopify.com/s/files/1/0046/9077/2040/files/Hublot_Banner_with_Logo_18e043ef-52b2-4c41-aea9-4911d3bb837b_2000x.jpg?v=1569368370"
+                     alt="Third slide" height="550px">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -144,33 +147,41 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <!-- promoted banner -->
+
+    <!-- main view product -->
     <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
-                <div class="container" style="height: 1000px">
-                    <div class="row" id="content">
-                        <c:forEach var = "watch" items='${requestScope["watchList"]}' >
+                <div class="row" id="content" style="height: 100%;">
+                    <c:forEach var="watch" items='${requestScope["watchList"]}'>
                         <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap">
+                            <div class="card" style="width: 100%; height: 611px">
+                                <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
+                                                                                               src="${watch.getImg()}"
+                                                                                               alt="Card image cap"></a>
                                 <div class="card-body">
-                                    <h5 class="card-title">${watch.getName()}</h5>
-                                    <p class="card-text" style="color: black; background-color: red">${watch.getPrice()}</p>
+                                    <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
+                                            class="card-title">${watch.getName()}</h5></a>
+                                    <p class="card-text"
+                                       style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
+                                    <hr/>
                                     <p class="card-text" style="color: black">${watch.getDescription()}</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
-                        </c:forEach>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
     </div>
+    <div class="footer">
+        <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
+    </div>
 </div>
-<footer>
-    <p style="color: silver; background-color: grey;text-align: center;width: 100%;height: 100px">Coppyright &copy; 2019 Boss Luxury Watch. All rights reserved</p>
-</footer>
+<!-- main view product -->
+
+
 </body>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 </html>

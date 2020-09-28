@@ -1,6 +1,7 @@
 package dao;
 
 import entities.Admin;
+import entities.Brand;
 import entities.Watch;
 
 import java.io.Serializable;
@@ -102,9 +103,8 @@ public class WatchDAO implements Serializable {
         Watch watch = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")){
-            System.out.println(preparedStatement);
             preparedStatement.setInt(1,id);
-
+            System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()){
@@ -147,6 +147,23 @@ public class WatchDAO implements Serializable {
             if (watch.getName().contains(name)) list.add(watch);
         }
         return list;
+    }
+    public List<Brand> selectAllBrand(){
+        List<Brand> brandList = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement cs = connection.prepareStatement("select * from brand ")) {
+            System.out.println(cs);
+            ResultSet resultSet = cs.executeQuery();
+
+            while (resultSet.next()){
+                int id_brand = resultSet.getInt("id_brand");
+                String name_brand = resultSet.getString("name_brand");
+                brandList.add(new Brand(id_brand,name_brand));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return brandList;
     }
 }
 
