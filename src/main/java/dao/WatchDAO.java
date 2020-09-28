@@ -50,17 +50,17 @@ public class WatchDAO implements Serializable {
         return list;
     }
 
-    public Admin selectAdmin(){
+    public Admin selectAdmin() {
         Admin admin = null;
         try (Connection connection = getConnection();
              PreparedStatement cs = connection.prepareStatement("select * from admin ")) {
             System.out.println(cs);
             ResultSet resultSet = cs.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String username = resultSet.getString("admin_name");
                 String password = resultSet.getString("admin_password");
-                admin = new Admin(username,password);
+                admin = new Admin(username, password);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -99,22 +99,22 @@ public class WatchDAO implements Serializable {
         return rowDeleted;
     }
 
-    public Watch findWatchByID(int id){
+    public Watch findWatchByID(int id) {
         Watch watch = null;
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")){
-            preparedStatement.setInt(1,id);
+             PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")) {
+            preparedStatement.setInt(1, id);
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
 
-            while (rs.next()){
+            while (rs.next()) {
                 int idNew = rs.getInt("id");
                 int brand_id = rs.getInt("brand_id");
                 String name = rs.getString("name");
                 String price = rs.getString("price");
                 String img = rs.getString("image");
                 String description = rs.getString("description");
-                watch = new Watch(idNew,brand_id,name,price,img,description);
+                watch = new Watch(idNew, brand_id, name, price, img, description);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -123,59 +123,57 @@ public class WatchDAO implements Serializable {
     }
 
 
-    public boolean updateWatchStore(int id,String watch_name,int brand_id, String price_watch,String image,String descript ){
+    public boolean updateWatchStore(int id, String watch_name, int brand_id, String price_watch, String image, String descript) {
         boolean rowUpdate = false;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("call update_watch(?,?,?,?,?,?)")){
-            ps.setInt(1,id);
-            ps.setString(2,watch_name);
-            ps.setInt(3,brand_id);
-            ps.setString(4,price_watch);
-            ps.setString(5,image);
-            ps.setString(6,descript);
-            rowUpdate = ps.executeUpdate() >0;
+             PreparedStatement ps = connection.prepareStatement("call update_watch(?,?,?,?,?,?)")) {
+            ps.setInt(1, id);
+            ps.setString(2, watch_name);
+            ps.setInt(3, brand_id);
+            ps.setString(4, price_watch);
+            ps.setString(5, image);
+            ps.setString(6, descript);
+            rowUpdate = ps.executeUpdate() > 0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return rowUpdate;
     }
 
-    public List<Watch> searchBy(String name){
+    public List<Watch> searchBy(String name) {
         List<Watch> list = new ArrayList<>();
         List<Watch> listWatch = selectAll();
-        for (Watch watch : listWatch){
+        for (Watch watch : listWatch) {
             if (watch.getName().contains(name)) list.add(watch);
         }
         return list;
     }
-<<<<<<< HEAD
-    public List<Brand> selectAllBrand(){
+
+    public List<Brand> selectAllBrand() {
         List<Brand> brandList = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement cs = connection.prepareStatement("select * from brand ")) {
             System.out.println(cs);
             ResultSet resultSet = cs.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int id_brand = resultSet.getInt("id_brand");
                 String name_brand = resultSet.getString("name_brand");
-                brandList.add(new Brand(id_brand,name_brand));
+                brandList.add(new Brand(id_brand, name_brand));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return brandList;
-=======
+    }
 
-    public List<Watch> hublot(){
-        List<Watch> hublotList = new ArrayList<>();
-        List<Watch> list = selectAll();
-        for (Watch watch : list) {
-            if (watch.getName().toUpperCase().contains("HUBLOT")) hublotList.add(watch);
-        }
-        return hublotList;
->>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
+    public List<Watch>hublot(String brand){
+            List<Watch> hublotList = new ArrayList<>();
+            List<Watch> list = selectAll();
+            for (Watch watch : list) {
+                if (watch.getName().toLowerCase().contains(brand)) hublotList.add(watch);
+            }
+            return hublotList;
     }
 }
-
 

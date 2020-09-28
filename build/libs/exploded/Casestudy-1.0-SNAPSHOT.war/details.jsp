@@ -154,7 +154,7 @@
     <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
-                <div class="container" style="height: 1000px">
+                <div class="container">
                     <div class="row" id="content">
                         <h1 class="card-title">${requestScope["watch"].getName()}</h1>
                         <div class="col-sm-8">

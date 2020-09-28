@@ -1,3 +1,5 @@
+entities/Brand.java
+ entities.Brand
 entities/ShoppingCart.java
  entities.ShoppingCart
 entities/Admin.java
@@ -8,11 +10,9 @@ entities/Order.java
  entities.Order
 entities/Watch.java
  entities.Watch
-dao/WatchDAO.java
- dao.WatchDAO
-entities/Brand.java
- entities.Brand
-controller/Servlet.java
- controller.Servlet
 controller/WatchServlet.java
  controller.WatchServlet
+dao/WatchDAO.java
+ dao.WatchDAO
+controller/Servlet.java
+ controller.Servlet

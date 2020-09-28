@@ -64,14 +64,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-<<<<<<< HEAD
-                    <a class="nav-link" href="/watches">Home <span class="sr-only">(current)</span></a>
-=======
                     <a class="nav-link" href="watches">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
->>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -82,17 +78,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu">
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="#">Rolex</a>
-                        <a class="dropdown-item" href="#">Hublot Watch</a>
+                        <a class="dropdown-item" href="/watches?action=brand&type=rolex">Rolex</a>
+                        <a class="dropdown-item" href="/watches?action=brand&type=hublot">Hublot</a>
                         <a class="dropdown-item" href="#">Apple Watch</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/category">List of Watches</a>
-=======
-                        <a class="dropdown-item" href="/watches?action=hublot">Hublot</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
->>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
                     </div>
                 </li>
                 <li class="nav-item " style="position: relative; float: right">
@@ -169,18 +159,12 @@
                 <div class="row" id="content" style="height: 100%;">
                     <c:forEach var="watch" items='${requestScope["watchList"]}'>
                         <div class="col-sm-4">
-<<<<<<< HEAD
-                            <div class="card" style="width: 100%; height: 611px">
-                                <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
-                                                                                               src="${watch.getImg()}"
-                                                                                               alt="Card image cap"></a>
-=======
                             <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap" width="100px" height="350px">
->>>>>>> 836ceb14b6fd90a6190b13584f4c5c4118861532
+                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap" width="420px" height="412px">
+
                                 <div class="card-body">
                                     <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
-                                            class="card-title">${watch.getName()}</h5></a>
+                                            class="card-title" style="height: 50px">${watch.getName()}</h5></a>
                                     <p class="card-text"
                                        style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
                                     <hr/>
@@ -198,8 +182,6 @@
     </div>
 </div>
 <!-- main view product -->
-
-
 </body>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 </html>
