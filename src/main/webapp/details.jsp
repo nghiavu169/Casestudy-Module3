@@ -154,21 +154,7 @@
     <div class="container" style="padding-top: 20px">
         <div class="row" style="height: auto">
             <div class="col-sm-12">
-<<<<<<< HEAD
                 <div class="container">
-                    <div class="row" id="content">
-                        <h1 class="card-title">${requestScope["watch"].getName()}</h1>
-                        <div class="col-sm-8">
-                            <img class="card-img-top" src="${requestScope["watch"].getImg()}" alt="Card image cap">
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card" style="width: 19rem;">
-                                <div class="card-body">
-                                    <p class="card-text" style="color: darkred; font-weight: bold">${requestScope["watch"].getPrice()}</p>
-                                    <p class="card-text" style="color: black">${requestScope["watch"].getDescription()}</p>
-                                    <a href="#" class="btn btn-primary">Add to cart</a>
-                                </div>
-=======
                 <h1>${watch.getName()}</h1>
                 <div class="row" id="content" style="height: 100%;">
                     <div class="col-sm-8">
@@ -185,7 +171,6 @@
                                    style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
                                 <hr/>
                                 <p class="card-text" style="color: black">${watch.getDescription()}</p>
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
                             </div>
                         </div>
                     </div>

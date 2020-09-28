@@ -164,16 +164,9 @@
                 <div class="row" id="content" style="height: 100%;">
                     <c:forEach var="watch" items='${requestScope["watchList"]}'>
                         <div class="col-sm-4">
-<<<<<<< HEAD
-                            <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap" width="420px" height="412px">
-
-=======
                             <div class="card" style="width:19rem; ">
                                 <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
-                                                                                               src="${watch.getImg()}"
-                                                                                               alt="Card image cap"></a>
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
+                                                                                               src="${watch.getImg()}"></a>
                                 <div class="card-body">
                                     <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
                                             class="card-title" style="height: 50px">${watch.getName()}</h5></a>

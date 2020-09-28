@@ -167,15 +167,6 @@
                     <c:forEach var="watch" items='${requestScope["watchList"]}'>
                         <c:if test="${watch.getBrand_id() == brand.getId()}">
                         <div class="col-sm-4">
-<<<<<<< HEAD
-                            <div class="card" style="width: 19rem">
-                                <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
-                                                                                               src="<c:out value="${watch.getImg()}"/>"
-                                                                                               alt="Card image cap" /></a>
-                                <div class="card-body">
-                                    <a href="/watches?action=showDetails&id=${watch.getId()}">
-                                        <h5 class="card-title"><c:out value="${watch.getName()}"/></h5></a>
-=======
                             <div class="card" style="width:19rem; ">
                                 <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
                                                                                                src="${watch.getImg()}"
@@ -183,7 +174,6 @@
                                 <div class="card-body">
                                     <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
                                             class="card-title" style="height: 50px">${watch.getName()}</h5></a>
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
                                     <p class="card-text"
                                        style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
                                     <hr/>

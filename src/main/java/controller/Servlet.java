@@ -97,13 +97,8 @@ public class Servlet extends HttpServlet {
             case "showDetails":
                 showWatchDetails(request,response);
                 break;
-<<<<<<< HEAD
             case "brand":
                 brandWatch(request, response);
-=======
-            case "hublot":
-                hublotWatch(request, response);
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
                 break;
             default:
                 showListProductIndex(request,response);
@@ -117,13 +112,9 @@ public class Servlet extends HttpServlet {
         RequestDispatcher res = request.getRequestDispatcher("details.jsp");
         res.forward(request, response);
     }
-<<<<<<< HEAD
+
     private void brandWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Watch> watchList = watchDAO.hublot(request.getParameter("type"));
-=======
-    private void hublotWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Watch> watchList = watchDAO.hublot();
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
         request.setAttribute("watchList", watchList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
