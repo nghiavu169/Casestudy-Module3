@@ -78,13 +78,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu">
-<<<<<<< HEAD
                         <a class="dropdown-item" href="/watches?action=brand&type=rolex">Rolex</a>
                         <a class="dropdown-item" href="/watches?action=brand&type=hublot">Hublot</a>
-=======
-                        <a class="dropdown-item" href="#">Rolex</a>
-                        <a class="dropdown-item" href="/watches?action=hublot">Hublot</a>
->>>>>>> bd30478271a3f22fd495e7effbaa0b1c11efdb74
                         <a class="dropdown-item" href="#">Apple Watch</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/category">List of Watches</a>
