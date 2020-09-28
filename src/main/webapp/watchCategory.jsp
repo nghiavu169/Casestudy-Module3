@@ -68,7 +68,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="/watches">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="watches">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -80,10 +83,10 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Rolex</a>
-                        <a class="dropdown-item" href="#">Hublot Watch</a>
+                        <a class="dropdown-item" href="/watches?action=hublot">Hublot</a>
                         <a class="dropdown-item" href="#">Apple Watch</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="/category">List of Watches</a>
                     </div>
                 </li>
                 <li class="nav-item " style="position: relative; float: right">
@@ -159,22 +162,22 @@
             <div class="col-sm-12">
                 <c:forEach var="brand" items='${requestScope["brandList"]}'>
                     <h5>${brand.getName()}</h5>
-                    <hr/>
-                <div class="row" id="content" style="height: auto">
+                        <hr/>
+                <div class="row" id="content" style="height: auto;">
                     <c:forEach var="watch" items='${requestScope["watchList"]}'>
                         <c:if test="${watch.getBrand_id() == brand.getId()}">
                         <div class="col-sm-4">
-                            <div class="card" style="width: 100%; height: 611px">
+                            <div class="card" style="width:19rem; ">
                                 <a href="/watches?action=showDetails&id=${watch.getId()}"><img class="card-img-top"
-                                                                                               src="<c:out value="${watch.getImg()}"/>"
+                                                                                               src="${watch.getImg()}"
                                                                                                alt="Card image cap"></a>
                                 <div class="card-body">
                                     <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
-                                            class="card-title"><c:out value="${watch.getName()}"/></h5></a>
+                                            class="card-title" style="height: 50px">${watch.getName()}</h5></a>
                                     <p class="card-text"
-                                       style="color: darkred; font-weight: bold"><c:out value="${watch.getPrice()}"/></p>
+                                       style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
                                     <hr/>
-                                    <p class="card-text" style="color: black"><c:out value="${watch.getDescription()}"/></p>
+                                    <p class="card-text" style="color: black">${watch.getDescription()}</p>
                                 </div>
                             </div>
                         </div>
@@ -190,8 +193,6 @@
     </div>
 </div>
 <!-- main view product -->
-
-
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
