@@ -148,6 +148,15 @@ public class WatchDAO implements Serializable {
         }
         return list;
     }
+
+    public List<Watch> hublot(){
+        List<Watch> hublotList = new ArrayList<>();
+        List<Watch> list = selectAll();
+        for (Watch watch : list) {
+            if (watch.getName().toUpperCase().contains("HUBLOT")) hublotList.add(watch);
+        }
+        return hublotList;
+    }
 }
 
 

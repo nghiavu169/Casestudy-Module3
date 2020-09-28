@@ -95,12 +95,22 @@ public class Servlet extends HttpServlet {
             case "delete":
                 deleteWatch(request,response);
                 break;
+            case "hublot":
+                hublotWatch(request, response);
+                break;
 //            case "edit":
 //                updateWatchFrom(request,response);
 //                break;
             default:
                 showListProductIndex(request,response);
         }
+    }
+
+    private void hublotWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Watch> watchList = watchDAO.hublot();
+        request.setAttribute("watchList", watchList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 
 //    private void updateWatchFrom(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

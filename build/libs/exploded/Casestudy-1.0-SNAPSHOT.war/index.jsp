@@ -65,7 +65,7 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="watches">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -79,11 +79,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="/watches?action=hublot">Hublot</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
                     </div>
                 </li>
                 <li class="nav-item ">
@@ -152,7 +150,7 @@
                         <c:forEach var = "watch" items='${requestScope["watchList"]}' >
                         <div class="col-sm-4">
                             <div class="card" style="width: 19rem;">
-                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap">
+                                <img class="card-img-top" src="${watch.getImg()}" alt="Card image cap" width="100px" height="350px">
                                 <div class="card-body">
                                     <h5 class="card-title">${watch.getName()}</h5>
                                     <p class="card-text" style="color: black; background-color: red">${watch.getPrice()}</p>
