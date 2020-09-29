@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>Luxury Watches</h1>
+<a href="/watches?action=logout">Log Out</a>
 <a href="/watches">Back to Home</a>
 <p>
 

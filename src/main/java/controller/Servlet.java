@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -77,12 +78,11 @@ public class Servlet extends HttpServlet {
         List<Watch> list = this.watchDAO.selectAll();
         request.setAttribute("watchList",list);
         if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())){
-            RequestDispatcher res = request.getRequestDispatcher("admin.jsp");
-            try {
-                res.forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
+            HttpSession session = request.getSession();
+            session.setAttribute("name",username);
+            response.sendRedirect("/admin");
+        } else {
+            response.sendRedirect("/watches");
         }
     }
 
@@ -100,9 +100,18 @@ public class Servlet extends HttpServlet {
             case "brand":
                 brandWatch(request, response);
                 break;
+            case "logout":
+                logout(request, response);
+                break;
             default:
                 showListProductIndex(request,response);
         }
+    }
+
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        session.removeAttribute("name");
+        response.sendRedirect("/watches");
     }
 
     private void showWatchDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -154,5 +163,7 @@ public class Servlet extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+
     }
+
 }

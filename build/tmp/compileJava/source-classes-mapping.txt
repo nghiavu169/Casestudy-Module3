@@ -14,9 +14,11 @@ entities/ShoppingCart.java
  entities.ShoppingCart
 dao/WatchDAO.java
  dao.WatchDAO
-controller/Servlet.java
- controller.Servlet
-controller/WatchServlet.java
- controller.WatchServlet
 controller/CartServlet.java
  controller.CartServlet
+controller/WatchServlet.java
+ controller.WatchServlet
+controller/AdminServlet.java
+ controller.AdminServlet
+controller/Servlet.java
+ controller.Servlet
