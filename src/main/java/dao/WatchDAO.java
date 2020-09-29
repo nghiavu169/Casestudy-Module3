@@ -17,7 +17,7 @@ public class WatchDAO implements Serializable {
     public WatchDAO() {
     }
 
-    protected Connection getConnection() {
+    protected static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -99,7 +99,7 @@ public class WatchDAO implements Serializable {
         return rowDeleted;
     }
 
-    public Watch findWatchByID(int id) {
+    public static Watch findWatchByID(int id) {
         Watch watch = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")) {
