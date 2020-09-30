@@ -16,6 +16,7 @@ import java.util.List;
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
     private WatchDAO watchDAO = new WatchDAO();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -27,7 +28,7 @@ public class AdminServlet extends HttpServlet {
             return;
         }
         List<Watch> list = this.watchDAO.selectAll();
-        request.setAttribute("watchList",list);
+        request.setAttribute("watchList", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin.jsp");
         dispatcher.forward(request, response);
     }

@@ -167,7 +167,7 @@ public class WatchDAO implements Serializable {
         return brandList;
     }
 
-    public List<Watch>hublot(String brand) {
+    public List<Watch> hublot(String brand) {
         List<Watch> hublotList = new ArrayList<>();
         List<Watch> list = selectAll();
         for (Watch watch : list) {
