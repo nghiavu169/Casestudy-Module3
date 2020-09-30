@@ -167,7 +167,7 @@
                                 <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
                                         class="card-title" style="height: 50px">${watch.getName()}</h5></a>
                                 <p class="card-text"
-                                   style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
+                                   style="color: darkred; font-weight: bold">${watch.getPrice()}$</p>
                                 <hr/>
                                 <p class="card-text" style="color: black">${watch.getDescription()}</p>
                                 <a href="/cart?action=buy&id=${watch.getId()}" class="btn btn-primary">Add to Cart</a>
