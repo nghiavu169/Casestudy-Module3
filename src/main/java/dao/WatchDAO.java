@@ -167,13 +167,13 @@ public class WatchDAO implements Serializable {
         return brandList;
     }
 
-    public List<Watch> hublot(String brand) {
-        List<Watch> hublotList = new ArrayList<>();
+    public List<Watch> getWatchesbyBrand(String brand) {
+        List<Watch> watchList = new ArrayList<>();
         List<Watch> list = selectAll();
         for (Watch watch : list) {
-            if (watch.getName().toLowerCase().contains(brand)) hublotList.add(watch);
+            if (watch.getName().toLowerCase().contains(brand)) watchList.add(watch);
         }
-        return hublotList;
+        return watchList;
     }
 }
 

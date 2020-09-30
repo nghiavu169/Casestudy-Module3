@@ -2,7 +2,6 @@ package controller;
 
 import dao.WatchDAO;
 import entities.Admin;
-import entities.ItemsLine;
 import entities.ShoppingCart;
 import entities.Watch;
 
@@ -144,7 +143,7 @@ public class Servlet extends HttpServlet {
     }
 
     private void brandWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Watch> watchList = watchDAO.hublot(request.getParameter("type"));
+        List<Watch> watchList = watchDAO.getWatchesbyBrand(request.getParameter("type"));
         request.setAttribute("watchList", watchList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
