@@ -39,7 +39,7 @@ public class WatchDAO implements Serializable {
                 int id = resultSet.getInt("id");
                 int brand_id = resultSet.getInt("brand_id");
                 String name = resultSet.getString("name");
-                String price = resultSet.getString("price");
+                double price = resultSet.getDouble("price");
                 String img = resultSet.getString("image");
                 String description = resultSet.getString("description");
                 list.add(new Watch(id, brand_id, name, price, img, description));
@@ -75,7 +75,7 @@ public class WatchDAO implements Serializable {
 
             cs.setString(1, watch.getName());
             cs.setInt(2, watch.getBrand_id());
-            cs.setString(3, watch.getPrice());
+            cs.setDouble(3, watch.getPrice());
             cs.setString(4, watch.getImg());
             cs.setString(5, watch.getDescription());
             System.out.println(cs);
@@ -99,7 +99,7 @@ public class WatchDAO implements Serializable {
         return rowDeleted;
     }
 
-    public static Watch findWatchByID(int id) {
+    public Watch findWatchByID(int id) {
         Watch watch = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("select * from watch where id = ?")) {
@@ -111,7 +111,7 @@ public class WatchDAO implements Serializable {
                 int idNew = rs.getInt("id");
                 int brand_id = rs.getInt("brand_id");
                 String name = rs.getString("name");
-                String price = rs.getString("price");
+                double price = rs.getDouble("price");
                 String img = rs.getString("image");
                 String description = rs.getString("description");
                 watch = new Watch(idNew, brand_id, name, price, img, description);
@@ -123,14 +123,14 @@ public class WatchDAO implements Serializable {
     }
 
 
-    public boolean updateWatchStore(int id, String watch_name, int brand_id, String price_watch, String image, String descript) {
+    public boolean updateWatchStore(int id, String watch_name, int brand_id, double price_watch, String image, String descript) {
         boolean rowUpdate = false;
         try (Connection connection = getConnection();
              PreparedStatement ps = connection.prepareStatement("call update_watch(?,?,?,?,?,?)")) {
             ps.setInt(1, id);
             ps.setString(2, watch_name);
             ps.setInt(3, brand_id);
-            ps.setString(4, price_watch);
+            ps.setDouble(4, price_watch);
             ps.setString(5, image);
             ps.setString(6, descript);
             rowUpdate = ps.executeUpdate() > 0;

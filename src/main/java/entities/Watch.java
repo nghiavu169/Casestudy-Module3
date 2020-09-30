@@ -2,9 +2,10 @@ package entities;
 
 public class Watch {
     int id, brand_id;
-    String name, price, img, description;
+    String name, img, description;
+    double price;
 
-    public Watch(int id, int brand_id, String name, String price, String img, String description) {
+    public Watch(int id, int brand_id, String name, double price, String img, String description) {
         this.id = id;
         this.brand_id = brand_id;
         this.name = name;
@@ -17,7 +18,7 @@ public class Watch {
 
     }
 
-    public Watch(String name, int brandID, String price, String image, String description) {
+    public Watch(String name, int brandID, double price, String image, String description) {
         this.brand_id = brandID;
         this.name = name;
         this.price = price;
@@ -49,11 +50,11 @@ public class Watch {
         this.name = name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

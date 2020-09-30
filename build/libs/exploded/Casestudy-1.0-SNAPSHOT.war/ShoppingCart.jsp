@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
@@ -83,7 +84,7 @@
             <div class="col-lg-12 col-md-12 col-12">
                 <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
                 <p class="mb-5 text-center">
-                    <i class="text-info font-weight-bold">3</i> items in your cart</p>
+                    <i class="text-info font-weight-bold"><c:out value="${cart.getNumbersOfItemsInCart()}"/></i> items in your cart</p>
                 <table id="shoppingCart" class="table table-condensed table-responsive">
                     <thead>
                     <tr>
@@ -94,39 +95,41 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="${cart.getList()}" var="list">
                     <tr>
                         <td data-th="Product">
                             <div class="row">
                                 <div class="col-md-3 text-left">
-                                    <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                    <img src="<c:out value="${list.getWatch().getImg()}"/>" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
                                 </div>
                                 <div class="col-md-9 text-left mt-sm-2">
                                     <h4>Product Name</h4>
-                                    <p class="font-weight-light">Brand &amp; Name</p>
+                                    <p class="font-weight-light"><c:out value="${list.getWatch().getName()}"/></p>
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">$49.00</td>
+                        <td data-th="Price"><c:out value="${list.getPrice()}"/>$</td>
                         <td data-th="Quantity">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="" class="btn btn-secondary">+</a>
-                                <button type="button" class="btn btn-secondary">2</button>
-                                <a href="" class="btn btn-secondary">-</a>
+                                <a href="/cart?action=buy&id=${list.getWatch().getId()}" class="btn btn-secondary">+</a>
+                                <button type="button" class="btn btn-secondary"><c:out value="${list.getQuantity()}"/></button>
+                                <a href="/cart?action=decrease&id=${list.getWatch().getId()}" class="btn btn-secondary">-</a>
                             </div>
                         </td>
                         <td class="actions" data-th="">
                             <div class="text-right">
                                 <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                                    <i class="fas fa-trash">Delete</i>
+                                    <a href="/cart?action=delete&id=${list.getWatch().getId()}" class="fas fa-trash">Delete</a>
                                 </button>
                             </div>
                         </td>
                     </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
                 <div class="float-right text-right">
                     <h4>Subtotal:</h4>
-                    <h1>$99.00</h1>
+                    <h1><c:out value="${cart.getTotalPrice()}"/>$</h1>
                 </div>
             </div>
         </div>
@@ -136,7 +139,7 @@
             </div>
             <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
                 <a href="index.jsp ">
-                    <i class="fas fa-arrow-left mr-2"></i> Continue Shopping</a>
+                    <a href="/watches" class="fas fa-arrow-left mr-2">Continue Shopping</a>
             </div>
         </div>
     </div>

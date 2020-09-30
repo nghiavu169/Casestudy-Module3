@@ -64,9 +64,6 @@
                     <a class="nav-link" href="watches">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
@@ -85,6 +82,7 @@
                 <li class="nav-item " style="position: relative; float: right">
                     <a class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModal">Login</a>
                 </li>
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -111,6 +109,7 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" name="name">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
+            <a class="nav-link fa fa-shopping-cart fa-2x" href="/cart"></a>
         </div>
     </nav>
     <!-- navbar -->
@@ -163,7 +162,7 @@
                                     <a href="/watches?action=showDetails&id=${watch.getId()}"><h5
                                             class="card-title" style="height: 50px">${watch.getName()}</h5></a>
                                     <p class="card-text"
-                                       style="color: darkred; font-weight: bold">${watch.getPrice()}</p>
+                                       style="color: darkred; font-weight: bold">${watch.getPrice()}$</p>
                                     <hr/>
                                     <p class="card-text" style="color: black">${watch.getDescription()}</p>
                                 </div>
@@ -175,14 +174,14 @@
         </div>
     </div>
 </div>
-<div class="footer" style="background-color: grey">
+<div class="footer" style="background-color: #111111; color: white">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-lg-4 col-xl-3">
                 <h5>About</h5>
                 <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
                 <p class="mb-0">
-                    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    V&NC là một nhà sản xuất đồng hồ xa xỉ của Thụy Sĩ được thành lập vào năm 1980 bởi Carlo Crocco. Công ty hoạt động như một công ty con thuộc sở hữu của LVMH của Pháp.
                 </p>
             </div>
 
@@ -190,10 +189,10 @@
                 <h5>Informations</h5>
                 <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
                 <ul class="list-unstyled">
-                    <li><a href="">Link 1</a></li>
-                    <li><a href="">Link 2</a></li>
-                    <li><a href="">Link 3</a></li>
-                    <li><a href="">Link 4</a></li>
+                    <li><a href="https://www.hublot.com/">Store 1</a></li>
+                    <li><a href="https://www.hublot.com/">Store 2</a></li>
+                    <li><a href="https://www.hublot.com/">Store 3</a></li>
+                    <li><a href="https://www.hublot.com/">Store 4</a></li>
                 </ul>
             </div>
 
@@ -212,8 +211,8 @@
                 <h5>Contact</h5>
                 <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
                 <ul class="list-unstyled">
-                    <li><i class="fa fa-home mr-2"></i> My company</li>
-                    <li><i class="fa fa-envelope mr-2"></i> email@example.com</li>
+                    <li><i class="fa fa-home mr-2"></i>V/N Corporation</li>
+                    <li><i class="fa fa-envelope mr-2"></i> VN@example.com</li>
                     <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
                     <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
                 </ul>

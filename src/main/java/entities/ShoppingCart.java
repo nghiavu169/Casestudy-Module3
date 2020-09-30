@@ -2,22 +2,52 @@ package entities;
 
 import dao.WatchDAO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    List<ItemsLine> list;
-    ItemsLine getItemsById(int id){
+    private WatchDAO watchDAO = new WatchDAO();
+    List<ItemsLine> list = new ArrayList<>();
+
+    public ShoppingCart(List<ItemsLine> list) {
+        this.list = list;
+    }
+
+    public ShoppingCart() {
+
+    }
+
+    public List<ItemsLine> getList() {
+        return list;
+    }
+
+    public void setList(List<ItemsLine> list) {
+        this.list = list;
+    }
+
+    public ItemsLine getItemsById(int id){
         for (ItemsLine itemsLine : list) {
-            if (itemsLine.id == id) return itemsLine;
+            if (itemsLine.getWatch().id == id)
+                return itemsLine;
         }
-        Watch watch = WatchDAO.findWatchByID(id);
-        ItemsLine itemsLine = new ItemsLine(watch, watch.price);
+        ItemsLine itemsLine = new ItemsLine();
+        itemsLine.setQuantity(0);
+        itemsLine.setWatch(this.watchDAO.findWatchByID(id));
+        itemsLine.setPrice(this.watchDAO.findWatchByID(id).getPrice());
         list.add(itemsLine);
         return itemsLine;
     }
-    double getTotalPrice(){
+    public double getTotalPrice(){
         double sumPrice = 0;
-        for (ItemsLine itemsLine : list) sumPrice += Double.parseDouble(itemsLine.price);
+        for (ItemsLine itemsLine : list)
+            sumPrice += itemsLine.cost();
         return sumPrice;
+    }
+    public int getNumbersOfItemsInCart(){
+        int total = 0;
+        for (ItemsLine itemsLine : list){
+            total += itemsLine.getQuantity();
+        }
+        return total;
     }
 }

@@ -1,23 +1,20 @@
 package entities;
 
 public class ItemsLine {
-    int id;
     Watch watch;
     int quantity;
-    String price;
+    double price;
 
-    public ItemsLine(Watch watch, String price) {
+    public ItemsLine(Watch watch, double price, int quantity) {
         this.watch = watch;
         this.price = price;
+        this.quantity = quantity;
     }
 
-    public int getId() {
-        return id;
+    public ItemsLine() {
+
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Watch getWatch() {
         return watch;
@@ -35,15 +32,15 @@ public class ItemsLine {
         this.quantity = quantity;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
     double cost(){
-        return Double.parseDouble(price) * quantity;
+        return price * quantity;
     }
 }

@@ -42,7 +42,7 @@ public class Servlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         int brandID = Integer.parseInt(request.getParameter("brandID"));
         String name = request.getParameter("name");
-        String price = request.getParameter("price");
+        double price = Double.parseDouble(request.getParameter("price"));
         String image = request.getParameter("image");
         String description = request.getParameter("description");
         this.watchDAO.updateWatchStore(id, name, brandID, price, image, description);
@@ -56,7 +56,7 @@ public class Servlet extends HttpServlet {
     private void createWatch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int brandID = Integer.parseInt(request.getParameter("brandID"));
         String name = request.getParameter("name");
-        String price = request.getParameter("price");
+        double price = Double.parseDouble(request.getParameter("price"));
         String image = request.getParameter("image");
         String description = request.getParameter("description");
         Watch watch = new Watch(name,brandID,price,image,description);
